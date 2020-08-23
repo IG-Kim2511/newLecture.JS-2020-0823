@@ -221,7 +221,14 @@ window.addEventListener("load", function () {
     var txtSum = inputs[3];
     */
 
-  btnAdd.onclick = function () {};
+  btnAdd.onclick = function () {
+    btnAdd.onclick = function(){
+      let x = parseInt(txtX.value);
+      let y = parseInt(txtY.value);
+
+      txtSum.value = x+y;
+    }
+  };
 });
 
 //Ex1 : 계산기 프로그램
@@ -231,5 +238,7 @@ window.addEventListener("load", function () {
   var btnAdd = document.getElementById("btn-add");
   var txtSum = document.getElementById("txt-sum");
 
-  btnAdd.onclick = function () {};
+  btnAdd.onclick = function () {
+    console.log('ad');
+  };
 });
