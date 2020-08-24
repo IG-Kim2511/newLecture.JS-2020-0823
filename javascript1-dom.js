@@ -66,7 +66,7 @@ window.addEventListener("load", function () {
   };
 });
 
-//Ex9-다중 노드선택 방법과 일괄삭제, 노드의 자리바꾸기
+//C36. Ex9-다중 노드선택 방법과 일괄삭제, 노드의 자리바꾸기
 window.addEventListener("load", function () {
   var section = document.querySelector("#section9");
 
@@ -76,9 +76,17 @@ window.addEventListener("load", function () {
   var delButton = section.querySelector(".del-button");
   var swapButton = section.querySelector(".swap-button");
 
-  allCheckbox.onchange = function () {};
+  allCheckbox.onchange = function () {
+    // console.log(allCheckbox.checked);
+    let inputs = tbody.querySelectorAll("input[type='checkbox']");
+    for (var i = 0; i < inputs.length; i++)
+      inputs[i].checked = allCheckbox.checked;
+  };
 
   delButton.onclick = function () {};
+  let inputs = tbody.querySelectorAll("input[type='checkbox']");
+
+  if (inputs[0].checked) inputs[0].parentElement.parentElement.remove();
 
   swapButton.onclick = function () {};
 });
@@ -170,14 +178,12 @@ window.addEventListener("load", function () {
     // let txtNode = document.createTextNode(title);
     // menuListDiv.appendChild(txtNode);
 
-let html = '<a href="">' +title + '</a>';
-let
-
-
+    let html = '<a href="">' + title + "</a>";
+    let;
   };
 
   delButton.onclick = function () {
-    let txtNode= menuListDiv.childNodes[0];
+    let txtNode = menuListDiv.childNodes[0];
     menuListDiv.removeChild(txtNode);
   };
 });
@@ -193,8 +199,8 @@ window.addEventListener("load", function () {
 
   changeButton.onclick = function () {
     // img.src='images/'+srcInput.value;
-    img.src = 'images/'+imgSelect.value;
-    img.style.borderColor=colorInput.value;
+    img.src = "images/" + imgSelect.value;
+    img.style.borderColor = colorInput.value;
   };
 });
 
@@ -218,11 +224,11 @@ window.addEventListener("load", function () {
   var btnAdd = section3.querySelector(".btn-add");
   var txtSum = section3.querySelector(".txt-sum");
 
-  btnAdd.onclick = function(){
+  btnAdd.onclick = function () {
     let x = parseInt(txtX.value);
     let y = parseInt(txtY.value);
 
-    txtSum.value = x+y;
+    txtSum.value = x + y;
   };
 });
 
@@ -243,13 +249,12 @@ window.addEventListener("load", function () {
     var txtSum = inputs[3];
     */
 
-      btnAdd.onclick = function(){
-      let x = parseInt(txtX.value);
-      let y = parseInt(txtY.value);
+  btnAdd.onclick = function () {
+    let x = parseInt(txtX.value);
+    let y = parseInt(txtY.value);
 
-      txtSum.value = x+y;
-    };
- 
+    txtSum.value = x + y;
+  };
 });
 
 //Ex1 : 계산기 프로그램
@@ -260,6 +265,6 @@ window.addEventListener("load", function () {
   var txtSum = document.getElementById("txt-sum");
 
   btnAdd.onclick = function () {
-    console.log('ad');
+    console.log("ad");
   };
 });
