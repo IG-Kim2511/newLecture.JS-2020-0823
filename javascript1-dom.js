@@ -160,13 +160,26 @@ window.addEventListener("load", function () {
   var section = document.querySelector("#section6");
 
   var titleInput = section.querySelector(".title-input");
-  var menuListUl = section.querySelector(".menu-list");
+  var menuListDiv = section.querySelector(".menu-list");
   var addButton = section.querySelector(".add-button");
   var delButton = section.querySelector(".del-button");
 
-  addButton.onclick = function () {};
+  addButton.onclick = function () {
+    let title = titleInput.value;
 
-  delButton.onclick = function () {};
+    // let txtNode = document.createTextNode(title);
+    // menuListDiv.appendChild(txtNode);
+
+let html = '<a href="">' +title + '</a>';
+let
+
+
+  };
+
+  delButton.onclick = function () {
+    let txtNode= menuListDiv.childNodes[0];
+    menuListDiv.removeChild(txtNode);
+  };
 });
 
 //Ex5 : 엘리먼트 노드의 속성& CSS 속성 변경
@@ -178,7 +191,11 @@ window.addEventListener("load", function () {
   var img = section.querySelector(".img");
   var colorInput = section.querySelector(".color-input");
 
-  changeButton.onclick = function () {};
+  changeButton.onclick = function () {
+    // img.src='images/'+srcInput.value;
+    img.src = 'images/'+imgSelect.value;
+    img.style.borderColor=colorInput.value;
+  };
 });
 
 //Ex4 : childeNodes를 이용한 노드 선택
@@ -201,7 +218,12 @@ window.addEventListener("load", function () {
   var btnAdd = section3.querySelector(".btn-add");
   var txtSum = section3.querySelector(".txt-sum");
 
-  btnAdd.onclick = function () {};
+  btnAdd.onclick = function(){
+    let x = parseInt(txtX.value);
+    let y = parseInt(txtY.value);
+
+    txtSum.value = x+y;
+  };
 });
 
 //Ex2 : 엘리먼트 선택방법 개선하기
@@ -221,14 +243,13 @@ window.addEventListener("load", function () {
     var txtSum = inputs[3];
     */
 
-  btnAdd.onclick = function () {
-    btnAdd.onclick = function(){
+      btnAdd.onclick = function(){
       let x = parseInt(txtX.value);
       let y = parseInt(txtY.value);
 
       txtSum.value = x+y;
-    }
-  };
+    };
+ 
 });
 
 //Ex1 : 계산기 프로그램
